@@ -2,95 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Electronics Universe - Cosmic Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cosmic dark theme as default for museum experience */
+    --background: 250 40% 6%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 250 35% 10%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 250 40% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 280 70% 60%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 200 80% 50%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 250 30% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 170 70% 45%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 250 30% 20%;
+    --input: 250 30% 18%;
+    --ring: 280 70% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Stage-specific colors */
+    --resistor: 30 90% 55%;
+    --resistor-glow: 30 100% 65%;
+    --inductor: 210 90% 55%;
+    --inductor-glow: 210 100% 70%;
+    --capacitor: 140 70% 45%;
+    --capacitor-glow: 140 80% 55%;
+    --diode: 340 80% 55%;
+    --diode-glow: 340 90% 65%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Cosmic effects */
+    --cosmic-purple: 280 70% 50%;
+    --cosmic-blue: 220 80% 55%;
+    --cosmic-teal: 180 70% 45%;
+    --star-glow: 45 100% 70%;
+    --electron-blue: 200 100% 60%;
+    --electron-glow: 200 100% 75%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(250 40% 6%) 0%, hsl(280 50% 12%) 50%, hsl(220 50% 10%) 100%);
+    --gradient-resistor: linear-gradient(135deg, hsl(30 90% 55%) 0%, hsl(40 100% 60%) 100%);
+    --gradient-inductor: linear-gradient(135deg, hsl(210 90% 55%) 0%, hsl(220 100% 65%) 100%);
+    --gradient-capacitor: linear-gradient(135deg, hsl(140 70% 45%) 0%, hsl(160 80% 55%) 100%);
+    --gradient-diode: linear-gradient(135deg, hsl(340 80% 55%) 0%, hsl(350 90% 65%) 100%);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 250 40% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 280 70% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 250 30% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 250 30% 20%;
+    --sidebar-ring: 280 70% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 250 40% 6%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    --card: 250 35% 10%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 250 40% 12%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 280 70% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 200 80% 50%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
+    --muted: 250 30% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 170 70% 45%;
     --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 250 30% 20%;
+    --input: 250 30% 18%;
+    --ring: 280 70% 60%;
+    --sidebar-background: 250 40% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 280 70% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 250 30% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 250 30% 20%;
+    --sidebar-ring: 280 70% 60%;
   }
 }
 
@@ -101,5 +110,123 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   }
+}
+
+@layer utilities {
+  .cosmic-bg {
+    background: var(--gradient-cosmic);
+  }
+
+  .glow-resistor {
+    box-shadow: 0 0 30px hsl(var(--resistor-glow) / 0.5),
+                0 0 60px hsl(var(--resistor-glow) / 0.3);
+  }
+
+  .glow-inductor {
+    box-shadow: 0 0 30px hsl(var(--inductor-glow) / 0.5),
+                0 0 60px hsl(var(--inductor-glow) / 0.3);
+  }
+
+  .glow-capacitor {
+    box-shadow: 0 0 30px hsl(var(--capacitor-glow) / 0.5),
+                0 0 60px hsl(var(--capacitor-glow) / 0.3);
+  }
+
+  .glow-diode {
+    box-shadow: 0 0 30px hsl(var(--diode-glow) / 0.5),
+                0 0 60px hsl(var(--diode-glow) / 0.3);
+  }
+
+  .glow-electron {
+    box-shadow: 0 0 20px hsl(var(--electron-glow) / 0.6),
+                0 0 40px hsl(var(--electron-glow) / 0.4);
+  }
+
+  .glow-star {
+    box-shadow: 0 0 10px hsl(var(--star-glow) / 0.8),
+                0 0 20px hsl(var(--star-glow) / 0.5);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  .animate-orbit {
+    animation: orbit 8s linear infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.8; filter: brightness(1.3); }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes slide-down {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes electron-flow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes magnetic-swirl {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes charge-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes celebration {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+  100% { transform: scale(1) rotate(360deg); opacity: 1; }
 }
